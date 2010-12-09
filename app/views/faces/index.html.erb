@@ -1,0 +1,23 @@
+<h1>Listing faces</h1>
+
+<table>
+  <tr>
+    <th>Fb</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @faces.each do |face| %>
+  <tr>
+    <td><%= face.fb_id %></td>
+    <td><%= link_to 'Show', face %></td>
+    <td><%= link_to 'Edit', edit_face_path(face) %></td>
+    <td><%= link_to 'Destroy', face, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Face', new_face_path %>
