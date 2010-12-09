@@ -5,9 +5,7 @@ class FacesController < ApplicationController
     max = Face.maximum(:id)
     @face = Face.where(["id > ?", rand(max)]).limit(1).first
 
-    respond_to do |format|
-      format.html # index.html.erb
-    end
+    redirect_to "http://en-us.facebook.com/people/-/#{@face.fb_id}"
   end
 
 end
